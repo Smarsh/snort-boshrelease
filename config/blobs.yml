@@ -7,9 +7,9 @@ golang1.6/go1.6.linux-amd64.tar.gz:
   object_id: e42c7b0d-bd40-4d2e-73d4-5bdd73120538
   sha: sha256:5470eac05d273c74ff8bac7bef5bad0b5abbd1c4052efbdbc8db45332e836b0b
 libdnet-1.12.tar.gz:
-  size: 959945
-  object_id: 1d975390-74c3-40bb-6f81-4f843a99e9fe
-  sha: sha256:b6360659c93fa2e3cde9e0a1fc9c07bc4111f3448c5de856e095eb98315dd424
+  size: 970125
+  object_id: 9cad16c4-2625-44b4-7aaa-90af71cd58ad
+  sha: sha256:83b33039787cf99990e977cef7f18a5d5e7aaffc4505548a83d31bd3515eb026
 libpcap-1.7.4.tar.gz:
   size: 663021
   object_id: 4d16ca8f-f69f-418f-6f9f-e6e03b08d886

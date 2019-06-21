@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 cd pulledpork-output
 
-cat << EOF > config/private.yml
+cat > config/private.yml <<EOF
 ---
 blobstore:
   provider: s3
@@ -13,6 +13,7 @@ blobstore:
     access_key_id: $S3_ACCESS_KEY_ID
     secret_access_key: $S3_SECRET_ACCESS_KEY
 EOF
+
 
 cp -rf ../snort-boshrelease-git/. ../snort-boshrelease-git-modified
 

@@ -2,6 +2,10 @@ daq-2.0.6.tar.gz:
   size: 518013
   object_id: 1d076433-79e6-4ff4-7c47-4de76177f314
   sha: sha256:d41da5f7793e66044e6927dd868c0525e7ee4ec1a3515bf74ef9a30cd9273af0
+daq-2.2.2.tar.gz:
+  size: 525444
+  object_id: 3691b961-6e18-4a73-4cec-cb24b2f2421a
+  sha: sha256:7cd818cabb1ad35360e83076e54775f07165ee71407dc672d147e27d3cd37f7b
 golang1.6/go1.6.linux-amd64.tar.gz:
   size: 84799480
   object_id: e42c7b0d-bd40-4d2e-73d4-5bdd73120538

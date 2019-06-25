@@ -1,0 +1,72 @@
+---
+
+resources:
+- name: git-snort-boshrelease
+  type: git
+  source:
+    uri: git@github.com:aosta/snort-boshrelease.git
+    private_key: {{github-private-key}}
+    branch: master
+    ignore_paths:
+    - releases/*
+    - .final_builds/*
+
+- name: git-snort-boshrelease-push
+  type: git
+  source:
+    uri: git@github.com:aosta/snort-boshrelease.git
+    private_key: {{github-private-key}}
+    branch: master
+
+- name: github-release
+  type: github-release
+  source:
+    owner: aosta
+    repository: snort-boshrelease
+    access_token: {{github-personal-access-token}}
+
+- name: version
+  type: semver
+  source:
+    driver: git
+    uri: git@github.com:aussielunix/boshreleases.git
+    branch: master
+    initial_version: 1.0.4
+    file: snort.version
+    private_key: {{github-private-key}}
+
+jobs:
+- name: build-it
+  plan:
+  - aggregate:
+    - get: version
+      params:
+        bump: minor
+    - get: git-snort-boshrelease
+      trigger: true
+
+  - task: create-bosh-release
+    file: git-snort-boshrelease/ci/tasks/create-bosh-release.yml
+    params:
+      bosh_release_name: snort
+      S3_ACCESS_KEY_ID: {{s3accesskeyid}}
+      S3_SECRET_ACCESS_KEY: {{s3secretaccesskey}}
+
+  - put: version
+    params:
+      file: version/version
+
+  - put: git-snort-boshrelease-push
+    params:
+      rebase: true
+      repository: boshrelease-output
+      tag: version/version
+      tag_prefix: v
+
+  - put: github-release
+    params:
+      name: github-release-info/name
+      tag: github-release-info/tag
+      body: github-release-info/body
+      globs:
+      - github-release-info/*-*.*.*.tgz

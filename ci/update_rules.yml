@@ -1,7 +1,7 @@
 ---
 jobs:
 
-- name: update-snort-boshrelease-rules
+- name: update-snort-rules
   plan:
   - get: timer
     trigger: true
@@ -14,10 +14,10 @@ jobs:
   - task: update-snort-conf
     file: snort-boshrelease-git/ci/tasks/update-snort-conf.yml
     params:
-      S3_ACCESS_KEY_ID: {{s3-access-key-id}}
-      S3_SECRET_ACCESS_KEY: {{s3-secret-access-key}}
-      GITHUB_USERNAME: {{github-username}}
-  - aggregate:
+      S3_ACCESS_KEY_ID: {{s3accesskeyid}}
+      S3_SECRET_ACCESS_KEY: {{s3secretaccesskey}}
+      GITHUB_USERNAME: {{github_username}}
+  - in_parallel:
     - put: snort-boshrelease-git
       params:
         rebase: true

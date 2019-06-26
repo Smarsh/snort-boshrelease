@@ -2,7 +2,7 @@
 blobstore:
   provider: s3
   options:
-    bucket_name: aosta-snort-boshrelease
-    endpoint: https://s3-ap-southeast-2.amazonaws.com
-    region: ap-southeast-2
+    bucket_name: smarsh-bosh-blobstore
+    endpoint: https://s3.us-gov-west-1.amazonaws.com/
+    region: us-gov-west-1
 final_name: snort

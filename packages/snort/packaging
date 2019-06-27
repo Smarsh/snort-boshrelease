@@ -29,7 +29,7 @@ function install {
 # Install snort and dependencies
 tar xzf libpcap-1.7.4.tar.gz && install libpcap-1.7.4
 tar xzf daq-2.0.6.tar.gz && install daq-2.0.6
-tar xzf libdnet-1.12.tar.gz && install libdnet-libdnet-1.12
+tar xzf libdnet-1.12.tar.gz && install libdnet-1.12
 tar xzf pcre-8.38.tar.gz && install pcre-8.38
 tar xzf snort-2.9.9.0.tar.gz && install snort-2.9.9.0
 

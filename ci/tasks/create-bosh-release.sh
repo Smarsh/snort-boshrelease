@@ -51,7 +51,7 @@ releases:
 - name: $RELEASE_NAME
   version: $VERSION
   sha1: $RELEASE_SHA1
-  url: https://github.com/aosta/${RELEASE_NAME}-boshrelease/releases/download/v${VERSION}/${RELEASE_NAME}-${VERSION}.tgz
+  url: https://github.com/smarsh/${RELEASE_NAME}-boshrelease/releases/download/v${VERSION}/${RELEASE_NAME}-${VERSION}.tgz
 \`\`\`
 
 EOF

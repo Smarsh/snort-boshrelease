@@ -34,11 +34,13 @@ tar xzf pcre-8.38.tar.gz && install pcre-8.38
 tar xzf snort-2.9.9.0.tar.gz && install snort-2.9.9.0
 
 # Set up config paths
-mkdir -p $BOSH_INSTALL_TARGET/etc
-mkdir -p $BOSH_INSTALL_TARGET/lib/snort_dynamicrules
+mkdir -pv ${BOSH_INSTALL_TARGET}/etc
+mkdir -pv ${BOSH_INSTALL_TARGET}/lib/snort_dynamicrules
 
 # Set up config files
-cp snort-2.9.9.0/etc/* $BOSH_INSTALL_TARGET/etc
+cp -avv snort-2.9.9.0/etc/* ${BOSH_INSTALL_TARGET}/etc
 
 tar xzf snort-conf.tar.gz
-cp -r snort-conf/* $BOSH_INSTALL_TARGET/etc
+cp -avv snort-conf/* ${BOSH_INSTALL_TARGET}/etc
+
+sed -i 's:alert\.fast:alert.fast.log:g' ${BOSH_INSTALL_TARGET}/etc/snort.conf

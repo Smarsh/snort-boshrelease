@@ -44,3 +44,4 @@ tar xzf snort-conf.tar.gz
 cp -avv snort-conf/* ${BOSH_INSTALL_TARGET}/etc
 
 sed -i 's:alert\.fast:alert.fast.log:g' ${BOSH_INSTALL_TARGET}/etc/snort.conf
+sed -i 's:log_asymmetric_traffic\ no\,:log_asymmetric_traffic\ no\,\ max_queued_segs\ 0\,\ :g' ${BOSH_INSTALL_TARGET}/etc/snort.conf

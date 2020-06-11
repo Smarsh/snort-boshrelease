@@ -99,6 +99,8 @@ builds:
     version: 1.59.0
   e28c759b-8b5c-49d3-6c4a-bfa42427716b:
     version: 1.19.0
+  e58db5da-579b-407f-7ab6-357fab26a095:
+    version: 1.71.0
   edd79252-d2ec-47fa-53f3-d8d579e692b3:
     version: 1.40.0
   ef67a55d-dc26-41bf-67ee-64839632c074:
